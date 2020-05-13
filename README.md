@@ -1,5 +1,6 @@
 # telegram-bot-factory
 Deploy your Telegram bots on demand in docker containers.
 
- 
-![alt text](./doc/telegrambot.png | width=100)
+<p align="center">
+<img src="./doc/telegrambot.png" alt="drawing" width="300"/>
+</p>
