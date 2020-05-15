@@ -1,0 +1,13 @@
+{
+  "bot1": {
+    "events": [
+      {
+        "hello": "send_hello"
+      },
+      {
+        "ola": "send_ola"
+      }
+    ],
+    "token": "911910503:AAGZ8DkBGcKX8p7o4yCN9IYHOny6jR8B7Kw"
+  }
+}
