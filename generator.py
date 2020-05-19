@@ -1,26 +1,20 @@
-def generate_functions(name):
-    function_str = "def $name(chat_id, message): \
+def generate_functions(function_name):
+    return "def {}(chat_id, message):\n\
     bot = Bot(token=TELEGRAM_TOKEN)\
-    bot.sendMessage(chat_id=chat_id, text=message)"
-
-    function_str.replace("$name", name)
-
-    return function_str
+    bot.sendMessage(chat_id=chat_id, text=message)\n\n".format(function_name)
 
 
-def generate_callback(name):
-    callback_str = "def $name(ch, method, properties, body):\
-    pass"
-    callback_str.replace("$name", name)
-    
-    return callback_str
+def generate_callback(function_name):
+    return "def {}(ch, method, properties, body):\n\tpass\n\n".format(function_name)
 
 
 def generate_subscriber():
-    subscriber_str = "def subscribe_topic(channel, topic):\
-    channel.queue_declare(queue=topic)\
+    return "def subscribe_topic(channel, topic):\n\
+    channel.queue_declare(queue=topic)\n\
     channel.basic_consume(queue=topic,\
-                          auto_ack=True,\
-                          on_message_callback=callback)"
+    auto_ack=True, on_message_callback=callback)\n\n"
 
-    return subscriber_str
+
+def insert_string(string, string_to_insert, tag):
+    pos = string.find(tag)
+    return string[:pos] + string_to_insert + string[pos:] + "\n"
